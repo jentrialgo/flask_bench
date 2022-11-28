@@ -62,3 +62,29 @@ vus,rps,resp_time,req_failed
 4,328.5085053816782,17.08476025,0
 8,458.0607763421559,19.53548689999999,0
 ```
+
+## PKB integration
+
+In order to run this benchmark automatically, you can use
+[PerfKitBenchmarker](https://googlecloudplatform.github.io/PerfKitBenchmarker/).
+Run this commands:
+
+```bash
+git clone https://github.com/GoogleCloudPlatform/PerfKitBenchmarker.git
+cd PerfKitBenchmarker
+wget https://raw.githubusercontent.com/jentrialgo/flask_bench/main/pkb/flask_benchmark.py -P perfkitbenchmarker/linux_benchmarks
+```
+
+Now you can run the benchmark with the default options like this:
+
+```bash
+./pkb.py --cloud=AWS --benchmarks=flask_benchmark --machine_type=c5.4xlarge --zone=eu-central-1
+```
+
+If you want to change the number of iterations or the duration, you can do it
+with the flags `--flask_iterations` and `--flask_duration`, respectively, like
+this:
+
+```bash
+./pkb.py --cloud=AWS --benchmarks=flask_benchmark --flask_iterations=60000 --flask_duration=30s --machine_type=c5.4xlarge --zone=eu-central-1
+```
