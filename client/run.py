@@ -19,7 +19,7 @@ class InjectionResult:
 
 def different_enough_rps(prev_run: InjectionResult, this_run: InjectionResult) -> bool:
     """Checks that the rps from the previous run and this one is more than
-    10%."""
+    5%."""
     if not prev_run:
         return True
 
@@ -28,7 +28,7 @@ def different_enough_rps(prev_run: InjectionResult, this_run: InjectionResult) -
     diff = this_rps - prev_rps
     diff_pct = diff * 100 / this_rps
 
-    if diff_pct >= 10:
+    if diff_pct >= 5:
         return True
 
     return False
