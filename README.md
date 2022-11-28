@@ -36,7 +36,15 @@ Remember to change the value `SERVER_IP` with the IP address of the server. For
 instance:
 
 ```bash
-docker run -e SERVER=172.31.0.23 flask/flask_bench_client
+docker run --rm -e SERVER=172.31.0.23 flask/flask_bench_client
+```
+
+This runs the client with the default number of iterations and duration of each
+injection. If you want to change them, you can use environment variables in the
+command line as in this example:
+
+```bash
+ docker run --rm -e SERVER=172.31.0.23 -e ITERATIONS=80000 -e DURATION=1s flask/flask_bench_client
 ```
 
 Example of output:

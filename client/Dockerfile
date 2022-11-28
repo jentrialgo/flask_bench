@@ -8,5 +8,7 @@ COPY load.js /
 RUN pip3 install click
 
 ENV SERVER "localhost"
+ENV ITERATIONS 60000
+ENV DURATION "30s"
 
-ENTRYPOINT ["sh", "-c", "python run.py --server=${SERVER}"]
+ENTRYPOINT ["sh", "-c", "python run.py --server=${SERVER} --iterations=${ITERATIONS} --duration=${DURATION}"]
