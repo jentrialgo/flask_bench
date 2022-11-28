@@ -67,12 +67,14 @@ vus,rps,resp_time,req_failed
 
 In order to run this benchmark automatically, you can use
 [PerfKitBenchmarker](https://googlecloudplatform.github.io/PerfKitBenchmarker/).
-Run this commands:
+Run these commands (it is recommended that you create and activate an
+environment first):
 
 ```bash
 git clone https://github.com/GoogleCloudPlatform/PerfKitBenchmarker.git
 cd PerfKitBenchmarker
-wget https://raw.githubusercontent.com/jentrialgo/flask_bench/main/pkb/flask_benchmark.py -P perfkitbenchmarker/linux_benchmarks
+wget https://raw.githubusercontent.com/jentrialgo/flask_bench/main/pkb/flaskbench_benchmark.py -P perfkitbenchmarker/linux_benchmarks
+pip3 install -r requirements.txt
 ```
 
 Now you can run the benchmark with the default options like this:
