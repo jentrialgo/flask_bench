@@ -29,7 +29,12 @@ To build the client, run:
 ```bash
 cd client
 docker build -t flask/flask_bench_client .
-docker run -e SERVER_IP flask/flask_bench_client
+docker run -e SERVER=SERVER_IP flask/flask_bench_client
 ```
 
-Remember to change the value `SERVER_IP` with the IP address of the server.
+Remember to change the value `SERVER_IP` with the IP address of the server. For
+instance:
+
+```bash
+docker run -e SERVER=172.31.0.23 flask/flask_bench_client
+```
