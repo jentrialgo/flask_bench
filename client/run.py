@@ -73,8 +73,9 @@ def run(server: str, iterations: int, duration: str):
     results = {}
     prev_run = None
     while True:
-        print(f"Injecting with {vus} vus")
+        print(f"Injecting with {vus} vus.", end="")
         this_run = inject(server, iterations, vus, duration)
+        print(this_run)
 
         if (not different_enough_rps(prev_run, this_run)) or this_run.req_failed > 0:
             break
