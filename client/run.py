@@ -49,7 +49,7 @@ def inject(server: str, iterations: int, vus: int, duration: str) -> InjectionRe
 
 
 def print_results(results: dict):
-    print("vus,rps,resp_time,req_failed")
+    print("\nvus,rps,resp_time,req_failed")
     for vus, i in results.items():
         print(f"{vus},{i.to_csv()}")
 

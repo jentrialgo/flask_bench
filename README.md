@@ -38,3 +38,19 @@ instance:
 ```bash
 docker run -e SERVER=172.31.0.23 flask/flask_bench_client
 ```
+
+Example of output:
+
+```bash
+Injecting with 1 vus
+Injecting with 2 vus
+Injecting with 4 vus
+Injecting with 8 vus
+Injecting with 16 vus
+
+vus,rps,resp_time,req_failed
+1,107.78563839363346,9.51176045,0
+2,211.93202459701726,9.596483199999998,0
+4,328.5085053816782,17.08476025,0
+8,458.0607763421559,19.53548689999999,0
+```
