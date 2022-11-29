@@ -13,6 +13,20 @@ significantly or there are failed requests.
 
 The number of iterations (`it1`) and the duration is configurable.
 
+This diagram shows the general architecture:
+
+```mermaid
+graph LR
+    A[k6] --> B[gunicorn] --> C[Flask]
+    subgraph Client
+    A
+    end
+    subgraph Server
+    B
+    C
+    end
+```
+
 ## Server
 
 To build the server, run:
@@ -74,9 +88,9 @@ vus,rps,resp_time,req_failed
 
 ## PKB integration
 
-In order to run this benchmark automatically, you can use
+In order to run this benchmark easily in a cloud environment, you can use
 [PerfKitBenchmarker](https://googlecloudplatform.github.io/PerfKitBenchmarker/).
-Run these commands (it is recommended that you create and activate an
+Run these commands (it is recommended that you create and activate a virtual
 environment first):
 
 ```bash
