@@ -1,5 +1,6 @@
 """This script runs the benchmark looking for the maximum throughput"""
 import subprocess
+import time
 
 import click
 
@@ -84,6 +85,10 @@ def run(server: str, iterations: int, duration: str):
 
         vus = vus * 2
         prev_run = this_run
+
+        if this_run.rps > 500:
+            # Leave time for TCP connections to get out of the TIME_WAIT state
+            time.sleep(60)  # 60 seconds
 
     print_results(results)
 
