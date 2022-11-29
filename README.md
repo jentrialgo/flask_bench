@@ -1,8 +1,17 @@
 # Flask bench
 
-This is a simple synthetic web benchmark using Flask. It only has a URL that
-receives two parameters, `it1` and `it2`, which control the number of iterations
-of two loops to simulate busy CPU cycles.
+This is a simple synthetic web benchmark using Flask. The server only has a URL
+that receives two parameters, `it1` and `it2`, which control the number of
+iterations of two loops to simulate busy CPU cycles. It uses `gunicorn` with the
+recommended configuration of `(num_cpus*2)+1` workers.
+
+The client uses [k6](https://k6.io/). It uses a default number of iterations and
+duration. It injects in a closed loop, with no thinking time between requests.
+It runs load injection experiments starting with 1 virtual user (VU) and
+doubling the number of VUs until the requests per second (RPS) do not increase
+significantly or there are failed requests.
+
+The number of iterations (`it1`) and the duration is configurable.
 
 ## Server
 
