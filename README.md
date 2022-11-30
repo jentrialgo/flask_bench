@@ -73,17 +73,17 @@ command line as in this example:
 Example of output:
 
 ```bash
-Injecting with 1 vus
-Injecting with 2 vus
-Injecting with 4 vus
-Injecting with 8 vus
-Injecting with 16 vus
+Injecting with 1 vus. rps=69.58683773778522 resp_time=14.25021685 res_failed=0
+Injecting with 2 vus. rps=133.7129194175826 resp_time=14.735899649999999 res_failed=0
+Injecting with 4 vus. rps=207.36593739764353 resp_time=28.290248599999998 res_failed=0
+Injecting with 8 vus. rps=279.57333903745644 resp_time=31.8923282 res_failed=0
+Injecting with 16 vus. rps=280.4042039326264 resp_time=82.846737 res_failed=0
 
 vus,rps,resp_time,req_failed
-1,107.78563839363346,9.51176045,0
-2,211.93202459701726,9.596483199999998,0
-4,328.5085053816782,17.08476025,0
-8,458.0607763421559,19.53548689999999,0
+1,69.58683773778522,14.25021685,0
+2,133.7129194175826,14.735899649999999,0
+4,207.36593739764353,28.290248599999998,0
+8,279.57333903745644,31.8923282,0
 ```
 
 ## PKB integration
