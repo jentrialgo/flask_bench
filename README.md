@@ -17,7 +17,7 @@ This diagram shows the general architecture:
 
 ```mermaid
 graph LR
-    A[k6] --> B[gunicorn] --> C[Flask]
+    A[k6] <--> B[gunicorn] <--> C[Flask]
     subgraph Client
     A
     end
